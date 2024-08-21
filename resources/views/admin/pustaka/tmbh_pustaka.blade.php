@@ -56,8 +56,9 @@
                     <div class="hargajual">
                         <label for="judul" class="hargajual2">Image</label>
                         <div class="">
-                            <input type="file" name="foto" id="foto" placeholder="Masukan Password"
-                                class="" required>
+                            <input type="file" id="image" name="foto" accept="image/*">
+                            <img id="preview" src="#" alt="Current Image"
+                                style="width:350px;height: 450px;display:none; margin-top:10px;">
                         </div>
                     </div>
                     <div class="hargajual">
@@ -70,9 +71,11 @@
                     <div class="stok">
                         <label for="judul" class="des2">Kategori</label>
                         <div class="">
-                            <select multiple="multiple" name="kategori[]" id="kategori" class="des1" style="height: auto;" required>
+                            <select multiple="multiple" name="kategori[]" id="kategori" class="des1"
+                                style="height: auto;" required>
                                 @foreach ($kategori as $list)
-                                    <option style="padding: 6px 6px" value="{{ $list->id }}">{{ $list->nama_kate }}</option>
+                                    <option style="padding: 6px 6px" value="{{ $list->id }}">{{ $list->nama_kate }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
@@ -84,4 +87,14 @@
             </footer>
         </article>
     </div>
+    <script>
+        document.getElementById('image').addEventListener('change', function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('preview').src = e.target.result;
+                document.getElementById('preview').style.display = 'block';
+            };
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
 @endsection

@@ -37,36 +37,47 @@
                         <label for="judul" class="hargabeli2">Penulis</label>
                         <div class="">
                             <input type="text" name="penulis" id="penulis" placeholder="Masukan Penulis"
-                            value="{{ $buku->penulis }}" class="hargabeli1" required>
+                                value="{{ $buku->penulis }}" class="hargabeli1" required>
                         </div>
                     </div>
                     <div class="hargabeli">
                         <label for="judul" class="hargabeli2">Penerbit</label>
                         <div class="">
                             <input type="text" name="penerbit" id="penerbit" placeholder="Masukan Penerbit"
-                            value="{{ $buku->penerbit }}" class="hargabeli1" required>
+                                value="{{ $buku->penerbit }}" class="hargabeli1" required>
                         </div>
                     </div>
                     <div class="hargabeli">
                         <label for="judul" class="hargabeli2">Tahun Terbit</label>
                         <div class="">
                             <input type="text" name="tahun_terbit" id="tahun_terbit" placeholder="Masukan Tahun Terbit"
-                            value="{{ $buku->tahun_terbit }}" class="hargabeli1" required>
+                                value="{{ $buku->tahun_terbit }}" class="hargabeli1" required>
+                        </div>
+                    </div>
+                    <div class="hargajual">
+                        <label for="judul" class="hargajual2">Image</label>
+                        <div class="">
+                            <input type="file" class="form-control editImageInput" id="editImage" name="foto"
+                                data-preview-id="editPreview" accept="image/*">
+                            <img id="editPreview" src="{{ asset('storage/' . $buku->foto) }}" alt="Current Image"
+                                style="width:350px;height: 450px;display: block;margin-top:10px;">
                         </div>
                     </div>
                     <div class="hargajual">
                         <label for="judul" class="hargajual2">Sinopsis</label>
                         <div class="">
                             <input type="text" name="sinopsis" id="sinopsis" placeholder="Masukan Sinopsis"
-                            value="{{ $buku->sinopsis }}" class="hargajual1" required>
+                                value="{{ $buku->sinopsis }}" class="hargajual1" required>
                         </div>
                     </div>
                     <div class="stok">
                         <label for="judul" class="des2">Kategori</label>
                         <div class="">
-                            <select  multiple="multiple" name="kategori[]" id="kategori" class="des1" required style="height: auto;">
+                            <select multiple="multiple" name="kategori[]" id="kategori" class="des1" required
+                                style="height: auto;">
                                 @foreach ($kategori as $list)
-                                    <option style="padding: 6px 6px" value="{{ $list->id }}" @if (in_array($list->id, $list_kategori)) selected @endif >{{ $list->nama_kate }}</option>
+                                    <option style="padding: 6px 6px" value="{{ $list->id }}"
+                                        @if (in_array($list->id, $list_kategori)) selected @endif>{{ $list->nama_kate }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -78,4 +89,24 @@
             </footer>
         </article>
     </div>
+    <script>
+        document.getElementById('image').addEventListener('change', function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('preview').src = e.target.result;
+                document.getElementById('preview').style.display = 'block';
+            };
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
+    <script>
+        document.getElementById('editImage').addEventListener('change', function() {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('editPreview').src = e.target.result;
+                document.getElementById('editPreview').style.display = 'block';
+            };
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
 @endsection

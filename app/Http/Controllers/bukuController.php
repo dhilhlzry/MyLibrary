@@ -7,6 +7,7 @@ use App\Models\kategori;
 use App\Models\relasi_kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class bukuController extends Controller
 {
@@ -18,8 +19,8 @@ class bukuController extends Controller
         if (request('search_buku')) {
             $data['buku'] = buku::where('judul', 'like', '%' . request('search_buku') . '%')->get();
         } else {
-            $data['buku'] = DB::table('buku')->paginate(5);
-            // $data['buku'] = DB::table('buku')->get();
+            //$data['buku'] = DB::table('buku')->paginate(5);
+            $data['buku'] = DB::table('buku')->get();
         }
         $data['title'] = "Pustaka";
         return view('admin.pustaka.pustaka', $data);
@@ -39,6 +40,14 @@ class bukuController extends Controller
 
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+
+        if ($request->hasFile('foto')) {
+            $imagePath = $request->file('foto')->store('post-image', 'public');
+        }
+
         $kodeauto = buku::selectRaw('LPAD(CONVERT(COUNT("kode_buku") + 1, char(8)) , 5,"0") as invoice')->first();
         $buku = new buku();
         $buku->kode_buku = 'BKU' . $kodeauto->invoice;
@@ -46,7 +55,7 @@ class bukuController extends Controller
         $buku->penulis = $request->penulis;
         $buku->penerbit = $request->penerbit;
         $buku->tahun_terbit = $request->tahun_terbit;
-        $buku->foto = $request->file('foto')->store('post-image');
+        $buku->foto = $imagePath;
         $buku->sinopsis = $request->sinopsis;
         $buku->save();
         $query = DB::table('buku')->where('judul', $request->judul)->first();
@@ -89,8 +98,24 @@ class bukuController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // dd($request->kategori);
+        // $request->validate([
+        //     'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        // ]);
+
         $pustaka = buku::findOrFail($id);
+
+        if ($request->hasFile('foto')) {
+            // Delete the old image
+            if ($pustaka->foto) {
+                Storage::disk('public')->delete($pustaka->foto);
+            }
+
+            // Store the new image
+            $imagePath = $request->file('foto')->store('post-image', 'public');
+            $pustaka->foto = $imagePath;
+        }
+
+        // dd($request->kategori);
         $pustaka->judul = $request->judul;
         $pustaka->penulis = $request->penulis;
         $pustaka->penerbit = $request->penerbit;
@@ -111,6 +136,9 @@ class bukuController extends Controller
     public function destroy(string $id)
     {
         $buku = buku::findOrFail($id);
+        if ($buku->foto) {
+            Storage::disk('public')->delete($buku->foto);
+        }
         $buku->delete();
         return redirect('/pustaka')->with('success', 'Delete Data Berhasil !');
     }
