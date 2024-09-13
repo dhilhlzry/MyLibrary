@@ -19,7 +19,7 @@ class bukuController extends Controller
         if (request('search_buku')) {
             $data['buku'] = buku::where('judul', 'like', '%' . request('search_buku') . '%')->get();
         } else {
-            //$data['buku'] = DB::table('buku')->paginate(5);
+            // $data['buku'] = DB::table('buku')->paginate(5);
             $data['buku'] = DB::table('buku')->get();
         }
         $data['title'] = "Pustaka";

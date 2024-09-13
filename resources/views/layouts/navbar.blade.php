@@ -11,6 +11,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('tailwind/ouput.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
+    @vite('resources/css/app.css')
     <style>
         .swal2-popup {
             font-size: 1.2rem !important;

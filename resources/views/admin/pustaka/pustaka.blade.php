@@ -85,7 +85,9 @@
                     </tbody>
                    
                 </table>
-                {{-- {{ $buku->links() }} --}}
+                {{-- <div class="mt-6 mx-14">
+                    {{ $buku->links() }}
+                </div> --}}
             </div>
         </div>
     </main>
