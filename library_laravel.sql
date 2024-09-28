@@ -2,8 +2,8 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 23, 2024 at 11:38 AM
+-- Host: 127.0.0.1
+-- Generation Time: Sep 28, 2024 at 04:00 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel_library`
+-- Database: `library_laravel`
 --
 
 -- --------------------------------------------------------
@@ -46,7 +46,7 @@ CREATE TABLE `anggota` (
 INSERT INTO `anggota` (`id`, `kode_anggota`, `nama_lengkap`, `alamat`, `jenis_kel`, `email`, `password`, `updated_at`, `created_at`) VALUES
 (3, 'AGT00002', 'Nadhif Alghifari', 'Cihampelas', 'L', 'alghifari@gmail.com', '$2y$12$2zvR5W8SzQX6JCNRk7YwCOfRaFN6JwzIgs/xueg6332coE/b.rDxe', '2024-02-27', '2024-02-27'),
 (5, 'AGT00004', 'Amin Abdul Aziz', 'Citeureup Kab Bandung', 'L', 'aminabdul@gmail.com', '$2y$12$CEATiArcRJXqxR8KDJrzn.C6uRnJww03pENY1Y3YUnK1DMz2B2Ex6', '2024-03-08', '2024-03-08'),
-(6, 'AGT00003', 'Fadhil Halyzari', 'Cihampelas', 'L', 'fhalyzari@gmail.com', '$2y$12$wfluzS5tVAytFWVR/iNZoOCTk9e/AtnABO8v0TmA4DL4pwhiG7wvK', '2024-06-22', '2024-06-22');
+(6, 'AGT00003', 'Fadhil Halyzari', 'Cihampelas', 'L', 'fhalyzari@gmail.com', '$2y$12$Gzh6LZZNPxrkCsG.WPBNMOIocqvTeWPhaxWqzYttn9rAlwsTpMAky', '2024-06-22', '2024-06-22');
 
 -- --------------------------------------------------------
 
@@ -445,7 +445,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `alamat`, `jenis_kel`, `no_telp`, `email`, `password`, `level`, `updated_at`, `created_at`) VALUES
-(1, 'Fadhil Halyzari', 'Cihampelas', 'L', '09764576', 'fhalyzari@gmail.com', '$2y$12$ipAPvUWkkSICzObEx20kQunpYwkuCpVE5t6S7UNlyw0iPe08.BbVy', 'Admin', '2024-02-24', NULL),
+(1, 'Fadhil Halyzari', 'Cihampelas', 'L', '09764576', 'fhalyzari@gmail.com', '$2y$12$Gzh6LZZNPxrkCsG.WPBNMOIocqvTeWPhaxWqzYttn9rAlwsTpMAky', 'Admin', '2024-02-24', NULL),
 (3, 'Nadhif Alghifari', 'Cihampelas', 'L', '00987468', 'alghifari@gmail.com', '$2y$12$YHpcxOW1OKfser2qkfScqutTf/Ut9ysncIbcsIRRS60TRCS9Ef16q', 'Petugas', '2024-02-22', '2024-02-22'),
 (5, 'Surya Dwi', 'Cigugur', 'L', '78095757', 'surr@gmail.com', '$2y$12$Fjd472Aw71N15IwjwLUI9OuKgAvscQrBStmI4cL5utNMxDv18K9ua', 'Petugas', '2024-02-22', '2024-02-22'),
 (7, 'Barikli Fajar', 'Margaasih', 'L', '082189768567', 'barikli@gmail.com', '$2y$12$CHF7Gh82PkFKoJtf6WtEdeY7.H4Q5HCHfPkfcxc4w.irLqH7rfsO2', 'Petugas', '2024-06-22', '2024-06-22');
