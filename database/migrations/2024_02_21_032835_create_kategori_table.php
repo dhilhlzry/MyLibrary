@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->string('kode_kate',20)->required();
             $table->string('nama_kate',50)->required();
+            $table->timestamps();
         });
     }
 

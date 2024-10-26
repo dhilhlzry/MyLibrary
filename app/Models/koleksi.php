@@ -9,4 +9,8 @@ class koleksi extends Model
 {
     use HasFactory;
     protected $table = 'koleksi';
+    protected $fillable = [
+        'id_buku',
+        'id_user',
+    ];
 }

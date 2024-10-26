@@ -11,4 +11,12 @@ class anggota extends Model
 {
     use HasFactory;
     protected $table = 'anggota';
+    protected $fillable = [
+        'kode_anggota',
+        'nama_lengkap',
+        'alamat',
+        'jenis_kel',
+        'email',
+        'password',
+    ];
 }

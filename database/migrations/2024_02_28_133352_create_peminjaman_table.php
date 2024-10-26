@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('kode_pinjam',50)->required();
             $table->string('id_user',50)->required();
             $table->string('id_buku',50)->required();
-            $table->date('tanggal_pinjam');
-            $table->date('tanggal_kembali');
+            $table->string('tanggal_pinjam');
+            $table->string('tanggal_kembali');
             $table->string('status',50)->required();
             $table->timestamps();
         });

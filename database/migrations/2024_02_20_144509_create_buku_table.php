@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('penulis',20)->required();
             $table->string('penerbit',20)->required();
             $table->integer('tahun_terbit');
-            $table->string('foto',20)->required();
+            $table->string('foto',200)->required();
             $table->string('sinopsis',50)->required();
+            $table->timestamps();
         });
     }
 

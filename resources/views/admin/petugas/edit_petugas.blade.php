@@ -71,7 +71,7 @@
                         <label for="judul" class="hargajual2">Password</label>
                         <div class="">
                             <input type="password" name="password" id="password" placeholder="Masukan Password"
-                                value="12345" class="hargajual1" required>
+                                value="********" class="hargajual1" required>
                         </div>
                     </div>
                     <div class="stok">

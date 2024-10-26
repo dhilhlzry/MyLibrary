@@ -15,8 +15,22 @@ class UserSeeder extends Seeder
     {
         $user = User::create([
 			'name' => 'Fadhil Halyzari',
+            'alamat' => 'Cihampelas',
+            'jenis_kel' => 'Laki-laki',
+            'no_telp' => '08123456789',
 			'email' => env('DEFAULT_EMAIL', 'fhalyzari@gmail.com'),
 			'password' => Hash::make(env('DEFAULT_PASSWORD', 12345678)),
+            'level' => 'Admin',
+        ]);
+
+        $user = User::create([
+			'name' => 'Aziz Gustian',
+            'alamat' => 'Margaasih',
+            'jenis_kel' => 'Laki-laki',
+            'no_telp' => '082262198765',
+			'email' => env('DEFAULT_EMAIL', 'maziz@gmail.com'),
+			'password' => Hash::make(env('DEFAULT_PASSWORD', 12345678)),
+            'level' => 'Petugas',
         ]);
     }
 }

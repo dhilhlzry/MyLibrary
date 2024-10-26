@@ -17,7 +17,7 @@
                         <li class="list-group-item" style="cursor: pointer;"><a href="" style="color: black;">Pilihan
                                 Lainnya</a></li>
                         <li class="list-group-item" style="cursor: pointer;"><a href="/hal_logout"
-                                onclick="return confirm('Apakah Yakin Ingin Logout?')" style="color: red;">Keluar Halaman
+                                onclick="return confirm('Apakah Yakin Ingin Logout ?')" style="color: red;">Keluar Halaman
                             </a></li>
                     </ul>
                 </div>

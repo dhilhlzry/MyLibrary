@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('alamat',50)->required();
             $table->string('jenis_kel',20)->required();
             $table->string('email',20)->required();
-            $table->string('password',50)->required();
+            $table->string('password',200)->required();
+            $table->timestamps();
         });
     }
 

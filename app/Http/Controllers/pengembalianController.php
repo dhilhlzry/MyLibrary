@@ -4,16 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\peminjaman;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Services\KembaliServices;
 
 class pengembalianController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    protected $kembali_services;
+
+    public function __construct(KembaliServices $kembali_services)
+    {
+        $this->kembali_services = $kembali_services;
+    }
+
     public function index()
     {
-        $data['kembali'] =  DB::table('tampil_kembali')->where('kode_pinjam', 'PNJ00000')->first();
+        /////TAMPIL KEMBALI
+        $data['kembali'] =  $this->kembali_services->index()->where('peminjaman.kode_pinjam', 'PNJ00000')->first();
         $data['title'] = "Pengembalian";
         return view('admin.pengembalian.pengembalian', $data);
     }
@@ -28,7 +37,7 @@ class pengembalianController extends Controller
 
     public function store(Request $request)
     {
-        $data['kembali'] = DB::table('tampil_kembali')->where('kode_pinjam', $request->pinjam)->first();
+        $data['kembali'] = $this->kembali_services->index()->where('peminjaman.kode_pinjam', $request->pinjam)->first();
         $data['title'] = "Pengembalian";
         return view('admin.pengembalian.pengembalian', $data);
     }
@@ -45,7 +54,7 @@ class pengembalianController extends Controller
 
     public function hapus()
     {
-        $data['kembali'] =  DB::table('tampil_kembali')->where('kode_pinjam', 'PNJ00000')->first();
+        $data['kembali'] =  $this->kembali_services->index()->where('peminjaman.kode_pinjam', 'PNJ00000')->first();
         $data['title'] = "Pengembalian";
         return view('admin.pengembalian.pengembalian', $data);
     }
@@ -59,13 +68,12 @@ class pengembalianController extends Controller
         $kembali = peminjaman::findOrFail($id);
         if ($kembali->status == 'kembali') {
             return redirect('/pengembalian')->with('info', 'Status Sudah Kembali !');
-        }else if ($kembali->status == 'selesai') {
+        } else if ($kembali->status == 'selesai') {
             return redirect('/pengembalian')->with('info', 'Status Sudah Selesai !');
-        }else{
+        } else {
             $kembali->status = 'kembali';
             $kembali->save();
             return redirect('/pengembalian')->with('success', 'Pengembalian Berhasil !');
         }
     }
-
 }

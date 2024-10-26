@@ -9,4 +9,13 @@ class petugas extends Model
 {
     use HasFactory;
     protected $table = 'users';
+    protected $fillable = [
+        'name',
+        'alamat',
+        'jenis_kel',
+        'no_telp',
+        'email',
+        'password',
+        'level',
+    ];
 }

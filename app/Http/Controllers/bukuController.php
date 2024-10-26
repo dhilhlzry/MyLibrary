@@ -8,12 +8,21 @@ use App\Models\relasi_kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use App\Services\KategoriServices;
 
 class bukuController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+     protected $kategori_services;
+
+    public function __construct(KategoriServices $kategori_services)
+    {
+        $this->kategori_services = $kategori_services;
+    }
+
     public function index()
     {
         if (request('search_buku')) {
@@ -73,8 +82,9 @@ class bukuController extends Controller
      */
     public function detail(string $id)
     {
+        /////DETAIL KATEGORI
         $data['detail'] = buku::findOrFail($id);
-        $data['relasi'] = DB::table('detail_kategori')->where('id_buku', $id)->get();
+        $data['relasi'] = $this->kategori_services->index()->where('relasi_kategori.id_buku', $id)->get();
         $data['title'] = "Pustaka";
         return view('admin.pustaka.detail_pustaka', $data);
     }

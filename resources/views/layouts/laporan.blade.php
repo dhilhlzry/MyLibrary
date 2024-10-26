@@ -72,12 +72,12 @@
                 </li>
             </ul>
             <ul class="side-menu">
-                <li>
+                {{-- <li>
                     <a href="">
                         <i class='bx bxs-cog'></i>
                         <span class="text">Settings</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="/logout" class="logout" onclick="return confirm('Apakah Yakin Ingin Logout ?')">
                         <i class='bx bxs-log-out-circle'></i>
@@ -135,12 +135,12 @@
                 </li>
             </ul>
             <ul class="side-menu">
-                <li>
+                {{-- <li>
                     <a href="">
                         <i class='bx bxs-cog'></i>
                         <span class="text">Settings</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="/logout" class="logout" onclick="return confirm('Apakah Yakin Mau Logout ?')">
                         <i class='bx bxs-log-out-circle'></i>
