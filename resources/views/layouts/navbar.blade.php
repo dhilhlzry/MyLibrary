@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/homeee.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    {{-- Complements --}}
+    <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}"> 
     <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
     <link rel="stylesheet" href="{{ asset('boxicons/box.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('tailwind/ouput.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('tailwind/ouput.css') }}"> --}}
     {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     @vite('resources/css/app.css')
     <style>

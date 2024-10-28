@@ -13,12 +13,22 @@ return new class extends Migration
     {
         Schema::create('ulasan', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user',50)->required();
-            $table->string('id_buku',50)->required();
-            $table->string('ulasan',50)->required();
-            $table->string('rating',50)->required();
+            $table->unsignedBigInteger('id_user')->required();
+            $table->unsignedBigInteger('id_buku')->required();
+            $table->string('ulasan', 50)->required();
+            $table->string('rating', 50)->required();
             $table->date('tanggal');
             $table->timestamps();
+
+            $table->foreign('id_buku')
+                ->references('id')
+                ->on('buku')
+                ->onDelete('cascade'); // Cascade on delete
+
+            $table->foreign('id_user')
+                ->references('id')
+                ->on('anggota')
+                ->onDelete('cascade'); // Cascade on delete
         });
     }
 

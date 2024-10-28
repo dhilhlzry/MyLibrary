@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/kembali.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    {{-- Complements --}}
+    <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
     <link rel="stylesheet" href="{{ asset('boxicons/box.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">

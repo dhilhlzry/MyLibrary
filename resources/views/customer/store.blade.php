@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Library - Login</title>
-    <link rel="stylesheet" href="{{ asset('fontawesome/cloudcusto.css') }}">
     <link rel="stylesheet" href="{{ asset('css/customer.css') }}">
-    <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
+    {{-- Complements --}}
+    <link rel="stylesheet" href="{{ asset('css/cloudstore.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
     <link rel="stylesheet" href="{{ asset('boxicons/box.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,10 +24,10 @@
                 @csrf
                 <h1>Create Account</h1>
                 <div class="social-icons">
-                    <a href="" class="icon"><i class='bx bxl-google-plus'></i></a>
-                    <a href="" class="icon"><i class='bx bxl-facebook'></i></a>
-                    <a href="" class="icon"><i class='bx bxl-github' ></i></a>
-                    <a href="" class="icon"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-google-plus'></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-github' ></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-linkedin' ></i></a>
                 </div>
                 <span>or use your email for registeration</span>
                 <input type="text" name="emaill" id="emaill" placeholder="Name">
@@ -41,10 +41,10 @@
                 @csrf
                 <h1>My Library</h1>
                 <div class="social-icons">
-                    <a href="" class="icon"><i class='bx bxl-google-plus'></i></a>
-                    <a href="" class="icon"><i class='bx bxl-facebook'></i></a>
-                    <a href="" class="icon"><i class='bx bxl-github' ></i></a>
-                    <a href="" class="icon"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-google-plus'></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-github' ></i></a>
+                    <a href="#" class="icon"><i class='bx bxl-linkedin' ></i></a>
                 </div>
                 <span>sign in with your email & password</span>
                 <input type="text" name="email" id="email" placeholder="Email">

@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Library - Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profill.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    {{-- Complements --}}
+    <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
     <title>Library - Website</title>
@@ -40,7 +42,7 @@
     <!-- navbar ended -->
     <!-- jumbotron+ -->
     <section class="jumbotron text-center">
-        <img src="img/images.png" alt="images" width="200" class="rounded-circle img-thumbnail" />
+        <img src="img/profile_image.png" alt="images" width="200" class="rounded-circle img-thumbnail" />
         <h1 class="display-4">{{ Auth::guard('anggota')->user()->nama_lengkap}}</h1>
         <p class="lead">Programing | Workout and Gaming</p>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

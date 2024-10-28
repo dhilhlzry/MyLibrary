@@ -13,9 +13,19 @@ return new class extends Migration
     {
         Schema::create('relasi_kategori', function (Blueprint $table) {
             $table->id();
-            $table->string('id_buku',20)->required();
-            $table->string('id_kategori',20)->required();
+            $table->unsignedBigInteger('id_buku')->required();
+            $table->unsignedBigInteger('id_kategori')->required();
             $table->timestamps();
+
+            $table->foreign('id_buku')
+                ->references('id')
+                ->on('buku')
+                ->onDelete('cascade'); // Cascade on delete
+
+            $table->foreign('id_kategori')
+                ->references('id')
+                ->on('kategori')
+                ->onDelete('cascade'); // Cascade on delete
         });
     }
 

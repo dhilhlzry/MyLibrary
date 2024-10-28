@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Pilot - Website</title>
+    <title>Library - Website</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/cloud.css') }}">
     <link rel="stylesheet" href="{{ asset('css/detailpess.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    {{-- Complements --}}
+    <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
     <link rel="stylesheet" href="{{ asset('boxicons/box.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
@@ -125,13 +126,16 @@
             </section>
             <footer class="modal-container-footer">
                 @if ($detail->status == 'pinjam')
-                <a href="/struk_riwayat/{{$detail->id}}"><button class="button is-primary">Lihat Bukti</button></a>
+                    <a href="/struk_riwayat/{{ $detail->id }}"><button class="button is-primary">Lihat
+                            Bukti</button></a>
                 @endif
                 @if ($detail->status == 'kembali')
-                <a href="/tmbh_ulasan/{{$detail->id}}"><button class="button is-success">Berikan Ulasan</button></a>
+                    <a href="/tmbh_ulasan/{{ $detail->id }}"><button class="button is-success">Berikan
+                            Ulasan</button></a>
                 @endif
                 @if ($detail->status == 'selesai')
-                <a href="/struk_riwayat/{{$detail->id}}"><button class="button is-primary">Lihat Bukti</button></a>
+                    <a href="/struk_riwayat/{{ $detail->id }}"><button class="button is-primary">Lihat
+                            Bukti</button></a>
                 @endif
                 <a href="/hal_riwayat"><button class="button is-danger">Keluar</button></a>
                 </form>

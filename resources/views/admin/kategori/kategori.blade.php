@@ -22,7 +22,7 @@
             <span class="num">2</span>
         </a>
         <a href="" class="profile">
-            <img src="img/images2.png">
+            <img src="img/profile_home.png">
         </a>
     </nav>
     <!-- NAVBAR -->

@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Library - Website</title>
-    <link rel="stylesheet" href="{{ asset('css/cloud.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/modall.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dett.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/input.css') }}">
     {{-- Complements --}}
     <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('boxicons/box.css') }}">
-</head>
 
 <body>
     <main>

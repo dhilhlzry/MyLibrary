@@ -3,13 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Boxicons -->
-    <!-- My CSS -->
+    <title>Library - Website</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbarrr.css') }}">
     <link rel="stylesheet" href="{{ asset('css/riwayat.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    {{-- Complements --}}
+    <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
     <link rel="stylesheet" href="{{ asset('boxicons/box.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
@@ -18,7 +17,6 @@
             font-size: 1.2rem !important;
         }
     </style>
-    <title>Library - Website</title>
 </head>
 
 <body>
@@ -39,7 +37,7 @@
                 <span class="num">2</span>
             </a>
             <a href="/hal_profil" class="profile" style="padding-left: auto; margin-bottom: 3px;">
-                <img src="img/istockphoto-1495088043-612x612.jpg">
+                <img src="img/profile_store.jpg">
             </a>
         </nav>
         <!-- NAVBAR -->

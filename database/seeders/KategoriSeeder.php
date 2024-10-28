@@ -34,11 +34,6 @@ class KategoriSeeder extends Seeder
         ]);
 
         $kategori = kategori::create([
-			'kode_kate' => 'KTG00004',
-            'nama_kate' => 'Kesenian & Olahraga',
-        ]);
-
-        $kategori = kategori::create([
 			'kode_kate' => 'KTG00005',
             'nama_kate' => 'Sejarah & Biografi',
         ]);

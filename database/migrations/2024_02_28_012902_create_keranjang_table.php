@@ -13,14 +13,24 @@ return new class extends Migration
     {
         Schema::create('keranjang', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user',50)->required();
-            $table->string('id_buku',50)->required();
-            $table->string('kode_buku',50)->required();
-            $table->string('judul',50)->required();
-            $table->string('penulis',50)->required();
-            $table->string('penerbit',50)->required();
-            $table->string('tahun_terbit',50)->required();
+            $table->unsignedBigInteger('id_user')->required();
+            $table->unsignedBigInteger('id_buku')->required();
+            $table->string('kode_buku', 50)->required();
+            $table->string('judul', 50)->required();
+            $table->string('penulis', 50)->required();
+            $table->string('penerbit', 50)->required();
+            $table->string('tahun_terbit', 50)->required();
             $table->timestamps();
+
+            $table->foreign('id_buku')
+                ->references('id')
+                ->on('buku')
+                ->onDelete('cascade'); // Cascade on delete
+
+            $table->foreign('id_user')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade'); // Cascade on delete
         });
     }
 

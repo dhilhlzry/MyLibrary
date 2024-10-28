@@ -6,6 +6,7 @@
     <title>Library - Website</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/detaill.css') }}">
+    {{-- Complements --}}
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
 </head>
 

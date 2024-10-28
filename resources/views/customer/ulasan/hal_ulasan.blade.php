@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
+    <title>Library - Website</title>
     <link rel="stylesheet" href="{{ asset('css/ulasann.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+    {{-- Complements --}}
+    <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fontawesome/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/font.css') }}">
     <link rel="stylesheet" href="{{ asset('sweetalert2/sweetalert2.min.css') }}">
-    <title>Library - Website</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                         <div class="comment-widgets m-b-20">
                             <div class="d-flex flex-row comment-row">
                                 <div class="p-2"><span class="round">
-                                        <img src="/img/istockphoto-1495088043-612x612.jpg" alt="user"
+                                        <img src="/img/profile_ulasan.jpg" alt="user"
                                             width="60"></span></div>
                                 <div class="comment-text w-100">
                                     <h5>{{ $list->nama_lengkap }}</h5>
